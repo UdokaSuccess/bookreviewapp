@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>review-a-book</title>
+</head>
+<body>
+    <main>
+    <header>
+    <h1>Check or write book reviews!</h1>
+    </header>
+
+    <section class="review-container">
+       <!-- contains reviews  -->
+    </section>
+
+    <form action="http://localhost:3000/bookreviews" method="post" id="form" enctype="multipart/form-data">
+        <h3>Recommend a book</h3>
+       <div class="form-item"> Book title: <input type="text" id="book-title" placeholder="Type the book title" name="title" required> </div>
+        <div class="form-item">Book review: <input type="text" id="review-text" placeholder="Write a short note or summary." name="summary"
+            required> </div> 
+        <div class="form-item">Your name: <input type="text" id="username" placeholder="What should we call you?" name="writer" required> </div> 
+       <div class="form-item">Book cover: <input type="file" name="src" accept="image/*" alt="img not found"/></div> 
+       <input type="submit" id="submit" class="form-item">
+    </form>
+
+
+    <footer>
+        <p class="footer-text">Follow us on instagram, tiktok, and youtube.</p>
+    </footer>
+
+    </main>
+
+<script src="script.js"></script>
+</body>
+</html>

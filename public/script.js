@@ -1,4 +1,4 @@
-const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://bookreviewapp-73os.onrender.com/';
+const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://bookreviewapp-73os.onrender.com';
 
 const bookReviewCard = async () => {
   try {

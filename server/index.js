@@ -1,15 +1,30 @@
+require('dotenv').config()
 const express = require("express")
 const mongoose = require('mongoose')
 const multer = require('multer')
 const cors = require('cors')
+
 
 const app = express()
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
+// const password = encodeURIComponent(process.env.MONGO_PASSWORD)
 
-mongoose.connect('mongodb://127.0.0.1:27017/books');
+// mongoose.connect('mongodb://127.0.0.1:27017/books');
+
+
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log('MongoDB connected');
+  } catch (err) {
+    console.error('DB connection error:', err);
+  }
+}
+
+connectDB();
     
 app.get('/bookreviews', async (req, res) => {
   try {
@@ -77,7 +92,6 @@ app.post('/bookreviews', upload.single('src'), async (req, res) => {
     console.error('server error 500', error)
 }
 })
-
 
 app.listen(3000, () => {
     console.log('connected')

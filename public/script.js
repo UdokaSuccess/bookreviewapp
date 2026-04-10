@@ -1,6 +1,8 @@
+const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'https://bookreviewapp-73os.onrender.com/';
+
 const bookReviewCard = async () => {
   try {
-    const response = await fetch('http://localhost:3000/bookreviews');
+    const response = await fetch(`${API_URL}/bookreviews`);
     const bookData = await response.json();
 
     const markup = bookData.map(book => {
